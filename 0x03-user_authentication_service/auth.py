@@ -6,6 +6,8 @@ import bcrypt
 from db import DB
 from user import User
 from uuid import uuid4
+
+
 def _hash_password(password: str) -> bytes:
     """Salts and hashes a password"""
     if password is not None and isinstance(password, str):
