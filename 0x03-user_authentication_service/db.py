@@ -39,9 +39,9 @@ class DB:
         self._session.commit()
         return new_user
 
-    def find_user_by(self, **kwargs) -> User:
+    def find_user_by(self, **attrib) -> User:
         """ Searches for a user in the database using the given attribute """
-        result = self._session.query(User).filter_by(**kwargs).all()
+        result = self._session.query(User).filter_by(**attrib).all()
         if not result:
             raise NoResultFound
         return result[0]
